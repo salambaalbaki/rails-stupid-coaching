@@ -1,0 +1,21 @@
+<h1>Stupid Coaching</h1>
+
+<div class="p-10 mb-20 grey-border">
+  <p> <strong><%= params[:question].capitalize %></strong> </p>
+  <p> <em>-You</em></p>
+</div>
+
+
+<div class="coach p-10 mb-20 grey-border">
+  <% if params[:question] == "I am going to work" %>
+      <p> <strong><%= "Great!" %></strong> </p>
+  <% elsif params[:question].end_with?("?") %>
+      <p> <strong><%= "Silly question, get dressed and go to work!" %></strong> </p>
+  <% else  %>
+      <p> <strong><%= "I don't care, get dressed and go to work!" %></strong> </p>
+  <% end %>
+  <p><em>-Your Coach</em></p>
+</div>
+
+
+<p class="button"><%= link_to "Ask a new question!", ask_path %></p>
